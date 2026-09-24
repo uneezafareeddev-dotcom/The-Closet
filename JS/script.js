@@ -45,19 +45,23 @@ function miniToast(message, icon) {
     }
 
     // ---- UNIFIED NAVBAR ----
+    var isHomePage = currentPage === "index.html";
+    var homePath = isHomePage ? "./index.html" : "../index.html";
+    var pagesPath = isHomePage ? "./HTML/" : "";
+    
     var navbar = document.getElementById("navbar");
     if (navbar) {
         navbar.innerHTML =
             '<div class="container nav-container">' +
-                '<a href="index.html" class="logo">' +
+                '<a href="' + homePath +'" class="logo">' +
                     '<i class="fas fa-gem logo-icon"></i> THE CLOSET' +
                 '</a>' +
                 '<nav class="nav-menu" id="navMenu">' +
                     '<ul class="nav-list">' +
-                        '<li><a href="index.html" class="nav-link ' + (isActive("index.html") ? "active" : "") + '">Home</a></li>' +
-                        '<li><a href="shop.html" class="nav-link ' + (isActive("shop.html") ? "active" : "") + '">Collection</a></li>' +
-                        '<li><a href="about.html" class="nav-link ' + (isActive("about.html") ? "active" : "") + '">About</a></li>' +
-                        '<li><a href="contact.html" class="nav-link ' + (isActive("contact.html") ? "active" : "") + '">Contact</a></li>' +
+                        '<li><a href="' + homePath+'" class="nav-link ' + (isActive("index.html") ? "active" : "") + '">Home</a></li>' +
+                        '<li><a href="' +pagesPath+ 'shop.html"class="nav-link ' + (isActive("shop.html") ? "active" : "") + '">Collection</a></li>' +
+                        '<li><a href="' +pagesPath+ 'about.html" class="nav-link ' + (isActive("about.html") ? "active" : "") + '">About</a></li>' +
+                        '<li><a href="' +pagesPath+ 'contact.html"class="nav-link ' + (isActive("contact.html") ? "active" : "") + '">Contact</a></li>' +
                     '</ul>' +
                     '<div class="nav-icons">' +
                         '<a href="shop.html" class="icon-btn" title="Search"><i class="fas fa-search"></i></a>' +
