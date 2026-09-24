@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product | The Closet</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="../CSS/pages.css">
+    <link rel="stylesheet" href="../CSS/product.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader"><span class="loader-text">THE CLOSET</span></div>
+    </div>
+
+    <!-- Navbar (script.js isay unified banayega) -->
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><i class="fas fa-gem logo-icon"></i> THE CLOSET</a>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link active">Collection</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="shop.html" class="icon-btn"><i class="fas fa-search"></i></a>
+                    <a href="wishlist.html" class="icon-btn"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html" class="icon-btn cart-btn"><i class="fas fa-shopping-bag"></i> <span class="cart-count" id="cartCount">0</span></a>
+                </div>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Banner -->
+        <section class="page-banner">
+            <div class="container">
+                <h1 class="banner-title" id="bannerTitle">Product</h1>
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><i class="fas fa-angle-right"></i></li>
+                    <li><a href="shop.html">Collection</a></li>
+                    <li><i class="fas fa-angle-right"></i></li>
+                    <li class="current" id="crumbCurrent">Product</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Product Detail -->
+        <section class="pd-section">
+            <div class="container">
+                <div class="pd-layout">
+                    <!-- Gallery -->
+                    <div class="pd-gallery">
+                        <div class="gallery-main" id="galleryMain">
+                            <img src="" alt="Product" id="mainImage">
+                        </div>
+                        <div class="gallery-thumbs" id="galleryThumbs"></div>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="pd-info">
+                        <span class="pd-category" id="pdCategory">category</span>
+                        <h1 class="pd-name" id="pdName">Product Name</h1>
+
+                        <div class="pd-rating">
+                            <span class="stars" id="pdStars"></span>
+                            <span class="rating-count" id="pdRatingCount">(0 reviews)</span>
+                        </div>
+
+                        <div class="pd-price-row">
+                            <span class="pd-price" id="pdPrice">$0.00</span>
+                            <span class="pd-old-price" id="pdOldPrice"></span>
+                            <span class="pd-discount" id="pdDiscount"></span>
+                        </div>
+
+                        <p class="pd-desc" id="pdDesc"></p>
+
+                        <div class="pd-sizes-block">
+                            <h4>Select Size</h4>
+                            <div class="pd-sizes" id="pdSizes"></div>
+                        </div>
+
+                        <div class="pd-actions-row">
+                            <div class="qty-selector">
+                                <button id="qtyMinus">&minus;</button>
+                                <span id="qtyNum">1</span>
+                                <button id="qtyPlus">+</button>
+                            </div>
+                            <button class="btn btn-primary" id="addToCartBtn">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="btn btn-outline" id="buyNowBtn">
+                                <i class="fas fa-bolt"></i> Buy Now
+                            </button>
+                        </div>
+
+                        <button class="pd-wish-btn" id="wishBtn">
+                            <i class="fas fa-heart"></i> <span>Add to Wishlist</span>
+                        </button>
+
+                        <div class="pd-meta">
+                            <div class="pd-meta-item">
+                                <span>SKU</span>
+                                <strong id="pdSku">TC-0000</strong>
+                            </div>
+                            <div class="pd-meta-item">
+                                <span>Category</span>
+                                <strong id="pdMetaCategory">—</strong>
+                            </div>
+                            <div class="pd-meta-item">
+                                <span>Tags</span>
+                                <strong id="pdTagCat">—</strong>
+                            </div>
+                        </div>
+
+                        <!-- Tabs -->
+                        <div class="pd-tabs" id="pdTabs">
+                            <button class="pd-tab active" data-tab="desc">Description</button>
+                            <button class="pd-tab" data-tab="shipping">Shipping</button>
+                            <button class="pd-tab" data-tab="returns">Returns</button>
+                        </div>
+
+                        <div class="tab-panel active" id="tab-desc">
+                            <p id="tabDescMain"></p>
+                        </div>
+                        <div class="tab-panel" id="tab-shipping">
+                            <p>Free shipping on orders over $150! Standard delivery takes 3-5 business days within the US and 7-14 days internationally. Every order includes live tracking sent straight to your email. 🚚</p>
+                        </div>
+                        <div class="tab-panel" id="tab-returns">
+                            <p>We offer a hassle-free 30-day return policy. Items must be unworn with original tags attached. Refunds are processed within 5-7 business days after we receive your return. Your satisfaction is our priority! 💜</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Products -->
+                <div class="related-section">
+                    <div class="section-header">
+                        <span class="section-subtitle">Keep Exploring</span>
+                        <h2 class="section-title">You May Also Like</h2>
+                    </div>
+                    <div class="product-grid" id="relatedGrid"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (script.js isay unified banayega) -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="logo"><i class="fas fa-gem logo-icon"></i> THE CLOSET</a>
+                <p>Premium fashion, curated for those who dare to stand out.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for exclusive drops & offers.</p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Your email">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 The Closet. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay">
+        <aside class="cart-drawer">
+            <div class="cart-drawer-head">
+                <h3><i class="fas fa-shopping-bag"></i> Your Cart <span id="cartDrawerCount">(0)</span></h3>
+                <button class="drawer-close" id="cartClose"><i class="fas fa-xmark"></i></button>
+            </div>
+            <div class="cart-drawer-items" id="cartItems"></div>
+            <div class="cart-drawer-foot">
+                <div class="cart-subtotal-row">
+                    <span>Subtotal:</span>
+                    <strong id="cartSubtotal">$0.00</strong>
+                </div>
+                <a href="cart.html" class="btn btn-primary btn-full">View Cart</a>
+                <a href="checkout.html" class="btn btn-outline btn-full">Checkout</a>
+            </div>
+        </aside>
+    </div>
+
+    <button id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+    <div id="toastContainer"></div>
+
+    <script src="../JS/script.js"></script>
+    <script src="../JS/product.js"></script>
+</body>
+</html>

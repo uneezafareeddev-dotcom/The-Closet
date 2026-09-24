@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Closet | Premium Fashion Store</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS (pages.css = shared kit, style.css = home page) -->
+    <link rel="stylesheet" href="./CSS/pages.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div id="preloader">
+        <div class="loader">
+            <span class="loader-text">THE CLOSET</span>
+        </div>
+    </div>
+
+    <!-- ========== NAVBAR (script.js isay unified version se replace karega) ========== -->
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gem logo-icon"></i> THE CLOSET
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Collection</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="shop.html" class="icon-btn"><i class="fas fa-search"></i></a>
+                    <a href="wishlist.html" class="icon-btn"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html" class="icon-btn cart-btn">
+                        <i class="fas fa-shopping-bag"></i> <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== HERO SECTION (Video-Jaisi Zooming Image) ========== -->
+        <section id="home" class="hero">
+            <!-- Zooming background image -->
+            <div class="hero-bg">
+                <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=1600&q=80" alt="The Closet Collection" class="hero-bg-img">
+            </div>
+            <!-- Dark overlay (text readable rakhne ke liye) -->
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <span class="hero-subtitle" id="typing-text"></span>
+                <h1 class="hero-title">Discover Your <br> Luxury Style</h1>
+                <p class="hero-desc">Explore our premium collection of modern fashion, curated just for you. Elegance is not about being noticed, it's about being remembered.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    <a href="#new-collection" class="btn btn-outline">View Collection</a>
+                </div>
+            </div>
+
+            <!-- Scroll Down Indicator -->
+            <a href="#new-collection" class="scroll-down">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </a>
+        </section>
+
+        <!-- ========== NEW COLLECTION SECTION ========== -->
+        <section id="new-collection" class="section new-collection">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Latest Trends</span>
+                    <h2 class="section-title">New Collection</h2>
+                </div>
+                <div class="collection-grid">
+                    <!-- Card 1 -->
+                    <div class="collection-card reveal">
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80" alt="Women's Collection">
+                        <div class="collection-overlay">
+                            <h3>Women's Edit</h3>
+                            <a href="shop.html" class="btn btn-small btn-primary">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="collection-card reveal">
+                        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&q=80" alt="Men's Collection">
+                        <div class="collection-overlay">
+                            <h3>Men's Edit</h3>
+                            <a href="shop.html" class="btn btn-small btn-primary">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="collection-card reveal">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Accessories Collection">
+                        <div class="collection-overlay">
+                            <h3>Accessories</h3>
+                            <a href="shop.html" class="btn btn-small btn-primary">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CATEGORIES SECTION ========== -->
+        <section id="categories" class="section categories-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Shop By Category</span>
+                    <h2 class="section-title">Top Categories</h2>
+                </div>
+                <div class="category-grid">
+                    <a href="shop.html" class="category-card reveal">
+                        <i class="fas fa-shirt"></i>
+                        <h4>T-Shirts</h4>
+                    </a>
+                    <a href="shop.html" class="category-card reveal">
+                        <i class="fas fa-user-tie"></i>
+                        <h4>Jackets</h4>
+                    </a>
+                    <a href="shop.html" class="category-card reveal">
+                        <i class="fas fa-shoe-prints"></i>
+                        <h4>Shoes</h4>
+                    </a>
+                    <a href="shop.html" class="category-card reveal">
+                        <i class="fas fa-gem"></i>
+                        <h4>Accessories</h4>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PRODUCTS SECTION (Static Cards) ========== -->
+        <section id="products" class="section products-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Trending Now</span>
+                    <h2 class="section-title">Featured Products</h2>
+                </div>
+
+                <div class="product-grid" id="productGrid">
+                    <!-- Product 1 -->
+                    <div class="product-card reveal">
+                        <div class="product-img">
+                            <a href="product.html?id=1">
+                                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80" alt="Premium Wool Coat" loading="lazy">
+                            </a>
+                            <span class="badge new">New</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <h4><a href="product.html?id=1">Premium Wool Coat</a></h4>
+                            <div class="price">$199.00 <span class="old-price">$249.00</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card reveal">
+                        <div class="product-img">
+                            <a href="product.html?id=2">
+                                <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80" alt="Classic White Sneakers" loading="lazy">
+                            </a>
+                            <span class="badge sale">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                            <h4><a href="product.html?id=2">Classic White Sneakers</a></h4>
+                            <div class="price">$89.00 <span class="old-price">$120.00</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card reveal">
+                        <div class="product-img">
+                            <a href="product.html?id=3">
+                                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" alt="Minimal Black Watch" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <h4><a href="product.html?id=3">Minimal Black Watch</a></h4>
+                            <div class="price">$150.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card reveal">
+                        <div class="product-img">
+                            <a href="product.html?id=4">
+                                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&q=80" alt="Leather Biker Jacket" loading="lazy">
+                            </a>
+                            <span class="badge sale">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <h4><a href="product.html?id=4">Leather Biker Jacket</a></h4>
+                            <div class="price">$220.00 <span class="old-price">$280.00</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card reveal">
+                        <div class="product-img">
+                            <a href="product.html?id=9">
+                                <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&q=80" alt="Oversized Comfort Hoodie" loading="lazy">
+                            </a>
+                            <span class="badge hot">Hot</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <h4><a href="product.html?id=9">Oversized Comfort Hoodie</a></h4>
+                            <div class="price">$55.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card reveal">
+                        <div class="product-img">
+                            <a href="product.html?id=6">
+                                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&q=80" alt="Aviator Sunglasses" loading="lazy">
+                            </a>
+                            <span class="badge new">New</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <h4><a href="product.html?id=6">Aviator Sunglasses</a></h4>
+                            <div class="price">$65.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card reveal">
+                        <div class="product-img">
+                            <a href="product.html?id=7">
+                                <img src="https://images.unsplash.com/photo-1551537482-f2075a1d41f2?w=600&q=80" alt="Classic Denim Jacket" loading="lazy">
+                            </a>
+                            <span class="badge hot">Hot</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                            <h4><a href="product.html?id=7">Classic Denim Jacket</a></h4>
+                            <div class="price">$95.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card reveal">
+                        <div class="product-img">
+                            <a href="product.html?id=10">
+                                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80" alt="Classic Leather Bag" loading="lazy">
+                            </a>
+                            <span class="badge new">New</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <h4><a href="product.html?id=10">Classic Leather Bag</a></h4>
+                            <div class="price">$180.00 <span class="old-price">$220.00</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="view-all-wrap">
+                    <a href="shop.html" class="btn btn-primary">View All Products <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT INFO SECTION ========== -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h2 class="section-title">Contact Us</h2>
+                </div>
+                <div class="contact-info-grid">
+                    <div class="contact-info-item reveal">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Visit Our Store</h4>
+                        <p>123 Fashion Street, Karachi, Pakistan</p>
+                    </div>
+                    <div class="contact-info-item reveal">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email Us</h4>
+                        <p>uneezafareed@gmail.com</p>
+                    </div>
+                    <div class="contact-info-item reveal">
+                        <i class="fas fa-phone"></i>
+                        <h4>Call Us</h4>
+                        <p>+92 300 1234567</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER (script.js isay unified version se replace karega) ========== -->
+    <footer class="footer" id="contact-footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="logo"><i class="fas fa-gem logo-icon"></i> THE CLOSET</a>
+                <p>Premium fashion, curated for those who dare to stand out. Elegance in every thread.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><a href="contact.html"><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Karachi</a></li>
+                    <li><a href="mailto:uneezafareed@gmail.com"><i class="fas fa-envelope"></i> uneezafareed@gmail.com</a></li>
+                    <li><a href="tel:+923001234567"><i class="fas fa-phone"></i> +92 300 1234567</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for exclusive drops & offers.</p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Your email">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 The Closet. All Rights Reserved. | Designed &amp; Developed by <strong style="color:#fff;">Uneeza Fareed</strong> with <i class="fas fa-heart"></i></p>
+        </div>
+    </footer>
+
+    <!-- ========== SCROLL TO TOP ========== -->
+    <button id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ========== TOASTS ========== -->
+    <div id="toastContainer"></div>
+
+    <!-- Custom JavaScript -->
+    <script src="./JS/script.js"></script>
+</body>
+</html>

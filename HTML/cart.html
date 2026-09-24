@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | The Closet</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Common + Cart CSS (path apne folder ke hisaab se adjust karna) -->
+    <link rel="stylesheet" href="../CSS/pages.css">
+    <link rel="stylesheet" href="../CSS/cart.css">
+</head>
+<body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div id="preloader">
+        <div class="loader">
+            <span class="loader-text">THE CLOSET</span>
+        </div>
+    </div>
+
+    <!-- ========== NAVBAR ========== -->
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gem logo-icon"></i> THE CLOSET
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Collection</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="shop.html" class="icon-btn" id="searchIconBtn"><i class="fas fa-search"></i></a>
+                    <a href="#" class="icon-btn" id="wishIconBtn"><i class="fas fa-heart"></i></a>
+                    <a href="#" class="icon-btn cart-btn" id="cartIconBtn">
+                        <i class="fas fa-shopping-bag"></i> <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== PAGE BANNER ========== -->
+        <section class="page-banner">
+            <div class="container">
+                <h1 class="banner-title"><i class="fas fa-shopping-bag"></i> Shopping Cart</h1>
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><i class="fas fa-angle-right"></i></li>
+                    <li class="current">Cart</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========== CART SECTION ========== -->
+        <section class="cart-section section">
+            <div class="container">
+
+                <!-- Free Shipping Progress Bar -->
+                <div class="ship-progress reveal" id="shipProgress">
+                    <p id="shipMsg">Add <strong>$150.00</strong> more to get <strong>FREE Shipping</strong>! 🚀</p>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div class="cart-layout">
+                    <!-- ===== Left: Cart Items ===== -->
+                    <div class="cart-box reveal">
+                        <!-- Table Head (sirf desktop) -->
+                        <div class="cart-head" id="cartHead">
+                            <span>Product</span>
+                            <span>Price</span>
+                            <span>Quantity</span>
+                            <span>Total</span>
+                            <span></span>
+                        </div>
+
+                        <!-- Rows JS se render hongi -->
+                        <div id="cartTableBody"></div>
+
+                        <!-- Box Actions -->
+                        <div class="cart-actions" id="cartActions">
+                            <a href="shop.html" class="btn btn-outline btn-small">
+                                <i class="fas fa-arrow-left"></i> Continue Shopping
+                            </a>
+                            <button class="btn btn-ghost btn-small" id="clearCartBtn">
+                                <i class="fas fa-trash-can"></i> Clear Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ===== Right: Order Summary ===== -->
+                    <aside class="summary-card reveal" id="summaryCard">
+                        <h3 class="summary-title"><i class="fas fa-receipt"></i> Order Summary</h3>
+
+                        <!-- Coupon Applied View -->
+                        <div class="coupon-applied" id="couponApplied" style="display:none;">
+                            <span><i class="fas fa-tag"></i> <strong id="couponCodeTxt"></strong> applied</span>
+                            <button id="couponRemove" title="Remove coupon"><i class="fas fa-xmark"></i></button>
+                        </div>
+
+                        <!-- Coupon Input -->
+                        <div class="coupon-box" id="couponBox">
+                            <input type="text" id="couponInput" placeholder="Coupon code (try CLOSET10)">
+                            <button id="couponApplyBtn">Apply</button>
+                        </div>
+
+                        <div class="summary-lines">
+                            <div class="summary-line">
+                                <span>Subtotal</span>
+                                <strong id="sumSubtotal">$0.00</strong>
+                            </div>
+                            <div class="summary-line discount" id="discountLine" style="display:none;">
+                                <span>Discount <small id="discountLabel"></small></span>
+                                <strong id="sumDiscount">-$0.00</strong>
+                            </div>
+                            <div class="summary-line">
+                                <span>Shipping</span>
+                                <strong id="sumShipping">$0.00</strong>
+                            </div>
+                            <div class="summary-line total">
+                                <span>Total</span>
+                                <strong id="sumTotal">$0.00</strong>
+                            </div>
+                        </div>
+
+                        <a href="checkout.html" class="btn btn-primary btn-full checkout-btn" id="checkoutBtn">
+                            Proceed to Checkout <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                        <div class="secure-note">
+                            <i class="fas fa-lock"></i> Secure 256-bit SSL Encrypted Payment
+                        </div>
+
+                        <div class="pay-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-apple-pay"></i>
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- ===== Empty Cart State ===== -->
+                <div class="cart-empty-page" id="emptyCart" style="display:none;">
+                    <div class="empty-icon">
+                        <i class="fas fa-cart-shopping"></i>
+                    </div>
+                    <h2>Your Cart is Empty</h2>
+                    <p>Looks like you haven't added anything yet.<br>Let's fix that — style is waiting for you!</p>
+                    <a href="shop.html" class="btn btn-primary">
+                        <i class="fas fa-store"></i> Start Shopping
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FEATURES STRIP ========== -->
+        <section class="features-strip">
+            <div class="container features-grid">
+                <div class="feature-item reveal">
+                    <i class="fas fa-truck-fast"></i>
+                    <div><h4>Free Shipping</h4><p>On orders over $150</p></div>
+                </div>
+                <div class="feature-item reveal">
+                    <i class="fas fa-rotate-left"></i>
+                    <div><h4>Easy Returns</h4><p>30-day return policy</p></div>
+                </div>
+                <div class="feature-item reveal">
+                    <i class="fas fa-shield-halved"></i>
+                    <div><h4>Secure Payment</h4><p>100% protected checkout</p></div>
+                </div>
+                <div class="feature-item reveal">
+                    <i class="fas fa-headset"></i>
+                    <div><h4>24/7 Support</h4><p>Always here to help</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER (apna existing footer paste kar sakte ho) ========== -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="logo"><i class="fas fa-gem logo-icon"></i> THE CLOSET</a>
+                <p>Premium fashion, curated for those who dare to stand out. Elegance in every thread.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for exclusive drops & offers.</p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Your email">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 The Closet. All Rights Reserved. Crafted with <i class="fas fa-heart"></i></p>
+        </div>
+    </footer>
+
+    <!-- ========== CART DRAWER (slide-in) ========== -->
+    <div class="cart-overlay" id="cartOverlay">
+        <aside class="cart-drawer">
+            <div class="cart-drawer-head">
+                <h3><i class="fas fa-shopping-bag"></i> Your Cart <span id="cartDrawerCount">(0)</span></h3>
+                <button class="drawer-close" id="cartClose"><i class="fas fa-xmark"></i></button>
+            </div>
+            <div class="cart-drawer-items" id="cartItems"></div>
+            <div class="cart-drawer-foot">
+                <div class="cart-subtotal-row">
+                    <span>Subtotal:</span>
+                    <strong id="cartSubtotal">$0.00</strong>
+                </div>
+                <a href="cart.html" class="btn btn-primary btn-full">View Cart</a>
+                <a href="checkout.html" class="btn btn-outline btn-full">Checkout</a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- ========== SCROLL TO TOP ========== -->
+    <button id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ========== TOASTS ========== -->
+    <div id="toastContainer"></div>
+
+    <!-- Scripts (path apne folder ke hisaab se adjust karna) -->
+    <script src="../JS/script.js"></script>
+    <script src="../JS/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | The Closet</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/pages.css">
+</head>
+<body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div id="preloader">
+        <div class="loader">
+            <span class="loader-text">THE CLOSET</span>
+        </div>
+    </div>
+
+    <!-- ========== NAVBAR ========== -->
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gem logo-icon"></i> THE CLOSET
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="#" class="icon-btn" id="searchIconBtn"><i class="fas fa-search"></i></a>
+                    <a href="#" class="icon-btn" id="wishIconBtn"><i class="fas fa-heart"></i></a>
+                    <a href="#" class="icon-btn cart-btn" id="cartIconBtn"><i class="fas fa-shopping-bag"></i> <span class="cart-count" id="cartCount">0</span></a>
+                </div>
+            </nav>
+
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== PAGE BANNER ========== -->
+        <section class="page-banner" id="home">
+            <div class="banner-content">
+                <h1 class="banner-title">Shop</h1>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span class="current">Shop</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SHOP SECTION ========== -->
+        <section class="section shop-section">
+            <div class="container">
+                <div class="shop-layout">
+
+                    <!-- Sidebar Filters -->
+                    <aside class="filter-sidebar" id="filterSidebar">
+                        <button class="filter-close" id="filterClose"><i class="fas fa-xmark"></i></button>
+
+                        <div class="filter-search">
+                            <input type="text" id="searchInput" placeholder="Search products...">
+                            <i class="fas fa-search"></i>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4 class="filter-title"><i class="fas fa-layer-group"></i> Categories</h4>
+                            <ul class="filter-list" id="categoryList">
+                                <li><button class="active" data-category="all">All Products <span class="filter-count">12</span></button></li>
+                                <li><button data-category="tshirts">T-Shirts <span class="filter-count">3</span></button></li>
+                                <li><button data-category="jackets">Jackets <span class="filter-count">3</span></button></li>
+                                <li><button data-category="shoes">Shoes <span class="filter-count">2</span></button></li>
+                                <li><button data-category="sunglasses">Sunglasses <span class="filter-count">2</span></button></li>
+                                <li><button data-category="accessories">Accessories <span class="filter-count">2</span></button></li>
+                            </ul>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4 class="filter-title"><i class="fas fa-tag"></i> Price</h4>
+                            <div class="price-values">
+                                <span>$0</span>
+                                <span id="priceValue">$300</span>
+                            </div>
+                            <input type="range" id="priceRange" min="20" max="300" value="300" step="5">
+                        </div>
+
+                        <div class="filter-group">
+                            <h4 class="filter-title"><i class="fas fa-palette"></i> Colors</h4>
+                            <div class="color-swatches" id="colorSwatches">
+                                <span class="swatch active" data-color="all" style="background: conic-gradient(#ef4444, #f59e0b, #22c55e, #06b6d4, #8B5CF6, #ef4444)" title="All"></span>
+                                <span class="swatch" data-color="#0f172a" style="background:#0f172a" title="Black"></span>
+                                <span class="swatch" data-color="#f8fafc" style="background:#f8fafc" title="White"></span>
+                                <span class="swatch" data-color="#8B5CF6" style="background:#8B5CF6" title="Purple"></span>
+                                <span class="swatch" data-color="#06B6D4" style="background:#06B6D4" title="Cyan"></span>
+                                <span class="swatch" data-color="#b45309" style="background:#b45309" title="Brown"></span>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4 class="filter-title"><i class="fas fa-ruler-combined"></i> Size</h4>
+                            <div class="size-btns" id="sizeBtns">
+                                <button class="size-btn" data-size="S">S</button>
+                                <button class="size-btn" data-size="M">M</button>
+                                <button class="size-btn" data-size="L">L</button>
+                                <button class="size-btn" data-size="XL">XL</button>
+                            </div>
+                        </div>
+
+                        <button class="clear-filters" id="clearFilters">
+                            <i class="fas fa-rotate-left"></i> Clear All Filters
+                        </button>
+                    </aside>
+
+                    <!-- Shop Content -->
+                    <div class="shop-content">
+                        <!-- Toolbar -->
+                        <div class="shop-toolbar">
+                            <p class="result-count" id="resultCount"></p>
+                            <div class="toolbar-right">
+                                <button class="filter-toggle" id="filterToggle"><i class="fas fa-sliders"></i> Filters</button>
+                                <select class="sort-select" id="sortSelect">
+                                    <option value="default">Default Sorting</option>
+                                    <option value="price-asc">Price: Low to High</option>
+                                    <option value="price-desc">Price: High to Low</option>
+                                    <option value="name">Name: A to Z</option>
+                                    <option value="rating">Top Rated</option>
+                                </select>
+                                <div class="view-toggle">
+                                    <button class="view-btn active" id="gridViewBtn" title="Grid View"><i class="fas fa-th-large"></i></button>
+                                    <button class="view-btn" id="listViewBtn" title="List View"><i class="fas fa-list"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Products (JS se render honge) -->
+                        <div class="product-grid" id="productGrid"></div>
+
+                        <!-- No Results -->
+                        <div class="no-results" id="noResults">
+                            <i class="fas fa-box-open"></i>
+                            <h3>No Products Found</h3>
+                            <p>Try changing filters or search keyword.</p>
+                        </div>
+
+                        <!-- Load More -->
+                        <div class="load-more-wrap">
+                            <button class="btn btn-primary" id="loadMoreBtn">Load More <i class="fas fa-arrow-down"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== QUICK VIEW MODAL ========== -->
+    <div class="modal-overlay" id="quickViewModal">
+        <div class="quick-view-modal">
+            <button class="qv-close" id="qvClose"><i class="fas fa-xmark"></i></button>
+            <div class="qv-image"><img id="qvImage" src="" alt="Product"></div>
+            <div class="qv-details">
+                <span class="category-tag" id="qvCategory"></span>
+                <h3 id="qvName"></h3>
+                <div class="stars qv-rating" id="qvStars"></div>
+                <div class="qv-price-row">
+                    <span class="qv-price" id="qvPrice"></span>
+                    <span class="qv-old-price" id="qvOldPrice"></span>
+                </div>
+                <p class="qv-desc" id="qvDesc"></p>
+                <span class="qv-label">Select Size</span>
+                <div class="qv-sizes" id="qvSizes"></div>
+                <div class="qv-actions">
+                    <div class="qty-selector">
+                        <button class="qty-btn" id="qvQtyMinus">&minus;</button>
+                        <span class="qty-num" id="qvQty">1</span>
+                        <button class="qty-btn" id="qvQtyPlus">+</button>
+                    </div>
+                    <button class="btn btn-primary" id="qvAddBtn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CART DRAWER ========== -->
+    <div class="cart-overlay" id="cartOverlay">
+        <aside class="cart-drawer">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-bag"></i> Your Cart <span id="cartDrawerCount">(0)</span></h3>
+                <button class="cart-close" id="cartClose"><i class="fas fa-xmark"></i></button>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-footer">
+                <div class="cart-subtext"><span>Subtotal</span><span id="cartSubtotal">$0.00</span></div>
+                <div class="cart-subtext"><span>Shipping</span><span>Free</span></div>
+                <div class="cart-total"><span>Total</span><span id="cartTotal">$0.00</span></div>
+                <a href="cart.html" class="btn btn-primary"><i class="fas fa-lock"></i> Proceed to Checkout</a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- ========== FILTER OVERLAY (Mobile) ========== -->
+    <div class="filter-overlay" id="filterOverlay"></div>
+
+    <!-- ========== TOAST CONTAINER ========== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- About Column -->
+                <div class="footer-col">
+                    <div class="logo footer-logo">
+                        <i class="fas fa-gem logo-icon"></i> THE CLOSET
+                    </div>
+                    <p>Elevate your wardrobe with our curated collection of premium fashion essentials. Designed &amp; developed by Uneeza Fareed.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook - @uneezafareed"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram - @uneezafareed"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter - @uneezafareed"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Pinterest - @uneezafareed"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="index.html#categories">Categories</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <!-- Customer Service -->
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Karachi, Pakistan</p>
+                        <p><i class="fas fa-envelope"></i> uneezafareed@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Closet. All Rights Reserved. | Designed &amp; Developed by <span style="color: var(--accent-cyan); font-weight: 600;">Uneeza Fareed</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll To Top -->
+    <a href="#home" class="scroll-top-btn" id="scrollTopBtn"><i class="fas fa-chevron-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="../JS/script.js"></script>
+    <script src="../JS/shop.js"></script>
+</body>
+</html>

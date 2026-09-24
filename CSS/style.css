@@ -1,0 +1,331 @@
+/* ============================================================
+   THE CLOSET — style.css (HOME PAGE SPECIFIC)
+   Hero, Collections, Categories, Home Sections
+   (Shared cheezein pages.css mein hain)
+   ============================================================ */
+
+/* ---------- 1. HERO ---------- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 55%, #4c1d95 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 130px 20px 90px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent 70%);
+    top: -150px; right: -100px;
+    animation: floatGlow 7s ease-in-out infinite alternate;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.25), transparent 70%);
+    bottom: -120px; left: -100px;
+    animation: floatGlow 8s ease-in-out infinite alternate-reverse;
+}
+
+.hero-content { max-width: 800px; position: relative; z-index: 1; }
+
+.hero-subtitle {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    min-height: 1.6em;
+}
+
+.hero-subtitle::after {
+    content: '|';
+    animation: cursorBlink 1s infinite;
+    -webkit-text-fill-color: var(--secondary);
+}
+
+@keyframes cursorBlink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
+}
+
+.hero-title {
+    color: #fff;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 22px;
+    animation: heroUp 0.9s 0.2s ease both;
+}
+
+@keyframes heroUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-desc {
+    color: #94a3b8;
+    max-width: 620px;
+    margin: 0 auto 38px;
+    line-height: 1.9;
+    font-size: 1rem;
+    animation: heroUp 0.9s 0.4s ease both;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: heroUp 0.9s 0.6s ease both;
+}
+
+/* Scroll Down Indicator */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.mouse {
+    width: 28px; height: 46px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    transition: border-color 0.3s;
+}
+
+.scroll-down:hover .mouse { border-color: var(--primary); }
+
+.wheel {
+    width: 4px; height: 9px;
+    background: var(--primary);
+    border-radius: 4px;
+    animation: wheelMove 1.8s infinite;
+}
+
+@keyframes wheelMove {
+    0%   { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(14px); }
+}
+
+/* ---------- 2. NEW COLLECTION ---------- */
+.new-collection { background: #fff; }
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.collection-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    cursor: pointer;
+    box-shadow: 0 5px 25px rgba(15, 23, 42, 0.1);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.collection-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(139, 92, 246, 0.25);
+}
+
+.collection-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.collection-card:hover img { transform: scale(1.1); }
+
+.collection-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent 65%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+}
+
+.collection-overlay h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    transform: translateY(15px);
+    transition: transform 0.4s;
+}
+
+.collection-overlay .btn {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s 0.05s, opacity 0.4s 0.05s;
+    align-self: flex-start;
+}
+
+.collection-card:hover .collection-overlay h3 { transform: translateY(0); }
+.collection-card:hover .collection-overlay .btn { transform: translateY(0); opacity: 1; }
+
+/* ---------- 3. CATEGORIES ---------- */
+.categories-section, .categories { background: linear-gradient(180deg, #f8fafc, #eef2f7); }
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.category-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 32px 20px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(15, 23, 42, 0.06);
+    border: 2px solid transparent;
+    transition: all 0.4s;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.15);
+}
+
+.category-card i,
+.category-icon i {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    transition: 0.4s;
+}
+
+.category-card:hover i { transform: scale(1.2) rotate(-8deg); }
+.category-card h4 { font-size: 1rem; color: var(--dark); }
+
+/* ---------- 4. PRODUCTS PREVIEW (Home) ---------- */
+.products-section, .products-preview { background: #fff; }
+
+.view-all-wrap { text-align: center; margin-top: 45px; }
+
+/* ---------- 5. HOME CONTACT / NEWSLETTER ---------- */
+.contact-section, .home-contact {
+    background: linear-gradient(180deg, #f8fafc, #eef2f7);
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.contact-info-item {
+    background: #fff;
+    border-radius: 18px;
+    padding: 32px 25px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(15, 23, 42, 0.06);
+    transition: all 0.4s;
+}
+
+.contact-info-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.15);
+}
+
+.contact-info-item i {
+    width: 60px; height: 60px;
+    margin: 0 auto 15px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(6,182,212,0.12));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--primary);
+    transition: 0.4s;
+}
+
+.contact-info-item:hover i {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #fff;
+}
+
+.contact-info-item h4 { margin-bottom: 8px; color: var(--dark); }
+.contact-info-item p { font-size: 0.88rem; color: var(--text); }
+
+/* ---------- 6. HOME RESPONSIVE ---------- */
+@media (max-width: 992px) {
+    .collection-grid { grid-template-columns: repeat(2, 1fr); }
+    .category-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-info-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 576px) {
+    .collection-grid { grid-template-columns: 1fr; }
+    .category-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .contact-info-grid { grid-template-columns: 1fr; }
+    .hero-buttons .btn { width: 100%; justify-content: center; }
+}
+/* ---------- 7. HERO ZOOMING BACKGROUND (Ken Burns Effect) ---------- */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: kenBurns 22s ease-in-out infinite alternate;
+}
+
+/* Slow zoom + pan = video jaisa feel */
+@keyframes kenBurns {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+    100% {
+        transform: scale(1.25) translate(-2.5%, -2%);
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15,23,42,0.88) 0%, rgba(30,27,75,0.78) 55%, rgba(76,29,149,0.82) 100%);
+    z-index: 1;
+}
+
+.hero-content { z-index: 2; }
+
+.scroll-down { z-index: 2; }
+
+/* Mobile par zoom thoda kam (battery/performance friendly) */
+@media (max-width: 768px) {
+    .hero-bg-img {
+        animation: kenBurns 16s ease-in-out infinite alternate;
+    }
+}

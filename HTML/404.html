@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | The Closet</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="../CSS/404.css">
+</head>
+<body>
+
+    <!-- ========== FLOATING SHAPES BACKGROUND ========== -->
+    <div class="shapes-bg">
+        <span class="shape circle"></span>
+        <span class="shape circle c2"></span>
+        <span class="shape ring"></span>
+        <span class="shape ring r2"></span>
+        <span class="shape square"></span>
+        <span class="shape square s2"></span>
+        <span class="shape triangle"></span>
+        <span class="shape dot d1"></span>
+        <span class="shape dot d2"></span>
+        <span class="shape dot d3"></span>
+        <span class="shape dot d4"></span>
+        <span class="shape dot d5"></span>
+    </div>
+
+    <!-- ========== 404 CONTENT ========== -->
+    <main class="nf-container">
+
+        <!-- Animated Gem Character 💎 -->
+        <div class="gem-scene">
+            <div class="gem-character">
+                <i class="fas fa-gem"></i>
+                <!-- Sad eyes -->
+                <span class="gem-eye left"></span>
+                <span class="gem-eye right"></span>
+                <span class="gem-mouth"></span>
+            </div>
+            <div class="gem-shadow"></div>
+            <!-- Sweat drop -->
+            <div class="sweat-drop"><i class="fas fa-droplet"></i></div>
+        </div>
+
+        <!-- Big 404 -->
+        <h1 class="nf-title">
+            <span class="nf-num n4">4</span>
+            <span class="nf-num n0">0</span>
+            <span class="nf-num n4b">4</span>
+        </h1>
+
+        <h2 class="nf-subtitle">Oops! This page wandered off the runway... 👀</h2>
+        <p class="nf-desc">The page you're looking for doesn't exist, was moved, or is temporarily hiding in our closet.</p>
+
+        <!-- Search Box -->
+        <div class="nf-search">
+            <i class="fas fa-magnifying-glass"></i>
+            <input type="text" id="nfSearchInput" placeholder="Search products... (e.g. jacket, watch)">
+            <button id="nfSearchBtn"><i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Countdown Redirect -->
+        <div class="nf-countdown">
+            <p>Redirecting to home in <strong id="countdown">15</strong>s</p>
+            <div class="count-track">
+                <div class="count-fill" id="countFill"></div>
+            </div>
+            <button class="cancel-btn" id="cancelRedirect">
+                <i class="fas fa-pause"></i> Wait, I'm browsing
+            </button>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="nf-links">
+            <a href="index.html" class="nf-link home"><i class="fas fa-house"></i> Home</a>
+            <a href="shop.html" class="nf-link shop"><i class="fas fa-store"></i> Shop</a>
+            <a href="cart.html" class="nf-link cart"><i class="fas fa-shopping-bag"></i> Cart</a>
+            <a href="contact.html" class="nf-link contact"><i class="fas fa-headset"></i> Support</a>
+        </div>
+
+        <!-- Fun footer -->
+        <p class="nf-easter">Error code: <code>TC-404_STYLE_NOT_FOUND</code> 🧦</p>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // ==========================================
+        // THE CLOSET — 404 Page Logic
+        // ==========================================
+
+        // ---------- 1. Countdown Redirect ----------
+        let secondsLeft = 15;
+        const countdownEl = document.getElementById("countdown");
+        const countFill   = document.getElementById("countFill");
+        const cancelBtn   = document.getElementById("cancelRedirect");
+
+        let redirectTimer = setInterval(() => {
+            secondsLeft--;
+            countdownEl.textContent = secondsLeft;
+
+            // Progress fill (15s = 100%)
+            const pct = ((15 - secondsLeft) / 15) * 100;
+            countFill.style.width = pct + "%";
+
+            if (secondsLeft <= 0) {
+                clearInterval(redirectTimer);
+                window.location.href = "index.html";
+            }
+        }, 1000);
+
+        // ---------- 2. Cancel Redirect ----------
+        cancelBtn.addEventListener("click", () => {
+            clearInterval(redirectTimer);
+            document.querySelector(".nf-countdown").innerHTML = `
+                <p style="color:#10b981;"><i class="fas fa-circle-check"></i> Redirect paused — take your time!</p>
+            `;
+        });
+
+        // ---------- 3. Search Redirect (shop page ke search ke saath link) ----------
+        function doSearch() {
+            const q = document.getElementById("nfSearchInput").value.trim();
+            // Shop page par search query bhejo
+            window.location.href = q ? `shop.html?search=${encodeURIComponent(q)}` : "shop.html";
+        }
+
+        document.getElementById("nfSearchBtn").addEventListener("click", doSearch);
+        document.getElementById("nfSearchInput").addEventListener("keydown", (e) => {
+            if (e.key === "Enter") doSearch();
+        });
+
+        // ---------- 4. Gem par click = fun bounce! ----------
+        const gem = document.querySelector(".gem-character");
+        gem.addEventListener("click", () => {
+            gem.style.animation = "none";
+            void gem.offsetWidth; // restart
+            gem.style.animation = "gemBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), gemFloat 3s 0.6s ease-in-out infinite";
+        });
+    </script>
+</body>
+</html>

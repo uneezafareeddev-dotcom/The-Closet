@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | The Closet</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Common + Contact CSS (path apne folder ke hisaab se adjust karna) -->
+    <link rel="stylesheet" href="../CSS/pages.css">
+    <link rel="stylesheet" href="../CSS/contact.css">
+</head>
+<body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div id="preloader">
+        <div class="loader">
+            <span class="loader-text">THE CLOSET</span>
+        </div>
+    </div>
+
+    <!-- ========== NAVBAR ========== -->
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gem logo-icon"></i> THE CLOSET
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Collection</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="shop.html" class="icon-btn"><i class="fas fa-search"></i></a>
+                    <a href="wishlist.html" class="icon-btn"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html" class="icon-btn cart-btn">
+                        <i class="fas fa-shopping-bag"></i> <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== PAGE BANNER ========== -->
+        <section class="page-banner">
+            <div class="container">
+                <h1 class="banner-title"><i class="fas fa-envelope"></i> Contact Us</h1>
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><i class="fas fa-angle-right"></i></li>
+                    <li class="current">Contact</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT INFO CARDS ========== -->
+        <section class="info-cards-section">
+            <div class="container">
+                <div class="info-cards-grid">
+                    <div class="info-card reveal">
+                        <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+                        <h4>Visit Our Store</h4>
+                        <p>123 Fashion Avenue,<br>New York, NY 10001</p>
+                        <a href="#" class="info-link">Get Directions <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="info-card reveal">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <h4>Call Us Anytime</h4>
+                        <p>+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                        <a href="tel:+15551234567" class="info-link">Call Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="info-card reveal">
+                        <div class="info-icon"><i class="fas fa-envelope-open-text"></i></div>
+                        <h4>Send an Email</h4>
+                        <p>hello@thecloset.com<br>support@thecloset.com</p>
+                        <a href="mailto:hello@thecloset.com" class="info-link">Email Us <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="info-card reveal">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <h4>Working Hours</h4>
+                        <p>Mon – Sat: 9AM – 9PM<br>Sunday: 11AM – 6PM</p>
+                        <span class="open-badge"><i class="fas fa-circle"></i> We're Open Now</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT FORM + MAP ========== -->
+        <section class="contact-main section">
+            <div class="container">
+                <div class="contact-layout">
+
+                    <!-- ===== Left: Form ===== -->
+                    <div class="contact-form-wrap reveal">
+                        <span class="section-subtitle">Get In Touch</span>
+                        <h2 class="section-title">Send Us a <span class="gradient-text">Message</span></h2>
+                        <p class="form-intro">Have a question about an order, a product, or just want to say hi? Fill out the form and we'll get back to you within 24 hours! 💌</p>
+
+                        <form id="contactForm" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Your Name <span class="req">*</span></label>
+                                    <div class="input-wrap">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" id="cName" placeholder="Ali Khan">
+                                    </div>
+                                    <small class="error-msg">Please enter your name (min 3 characters)</small>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address <span class="req">*</span></label>
+                                    <div class="input-wrap">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="email" id="cEmail" placeholder="you@example.com">
+                                    </div>
+                                    <small class="error-msg">Please enter a valid email address</small>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Phone <small>(optional)</small></label>
+                                    <div class="input-wrap">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="tel" id="cPhone" placeholder="+1 555 123 4567">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Subject <span class="req">*</span></label>
+                                    <div class="input-wrap">
+                                        <i class="fas fa-tag"></i>
+                                        <select id="cSubject">
+                                            <option value="">Choose a subject</option>
+                                            <option>Order Inquiry</option>
+                                            <option>Product Question</option>
+                                            <option>Returns & Refunds</option>
+                                            <option>Shipping Info</option>
+                                            <option>Partnership / Collab</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <small class="error-msg">Please select a subject</small>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Your Message <span class="req">*</span></label>
+                                <div class="input-wrap textarea-wrap">
+                                    <i class="fas fa-pen"></i>
+                                    <textarea id="cMessage" rows="5" placeholder="Write your message here..." maxlength="500"></textarea>
+                                </div>
+                                <div class="msg-footer">
+                                    <small class="error-msg">Message must be at least 10 characters</small>
+                                    <span class="char-counter"><span id="charCount">0</span>/500</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full send-btn" id="sendBtn">
+                                <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+                                <span class="btn-loader" style="display:none;">
+                                    <i class="fas fa-circle-notch fa-spin"></i> Sending...
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- ===== Right: Map + Socials ===== -->
+                    <aside class="contact-side reveal">
+                        <!-- Map -->
+                        <div class="map-wrap">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.958324!2d-74.11976!3d40.69766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1"
+                                width="100%"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="The Closet Store Location">
+                            </iframe>
+                            <div class="map-tag">
+                                <i class="fas fa-location-dot"></i> Flagship Store — New York
+                            </div>
+                        </div>
+
+                        <!-- Socials -->
+                        <div class="social-box">
+                            <h4>Follow Our Journey</h4>
+                            <p>Join our community for daily style inspiration & exclusive drops!</p>
+                            <div class="social-grid">
+                                <a href="#" class="social-pill fb"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+                                <a href="#" class="social-pill ig"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+                                <a href="#" class="social-pill tw"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+                                <a href="#" class="social-pill tt"><i class="fab fa-tiktok"></i><span>TikTok</span></a>
+                                <a href="#" class="social-pill yt"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+                                <a href="#" class="social-pill wa"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+                            </div>
+                        </div>
+
+                        <!-- Support Promise -->
+                        <div class="support-box">
+                            <div class="support-icon"><i class="fas fa-headset"></i></div>
+                            <div>
+                                <h4>24/7 Live Support</h4>
+                                <p>Average response time: <strong>under 2 hours</strong></p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FAQ SECTION ========== -->
+        <section class="faq-section section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Need Help?</span>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="faq-list" id="faqList">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item reveal">
+                        <button class="faq-question">
+                            <span><i class="fas fa-truck-fast faq-icon"></i> How long does shipping take?</span>
+                            <i class="fas fa-chevron-down faq-arrow"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Standard shipping takes 3-5 business days within the US, and 7-14 days for international orders. Orders over $150 ship absolutely FREE! 🚚</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item reveal">
+                        <button class="faq-question">
+                            <span><i class="fas fa-rotate-left faq-icon"></i> What is your return policy?</span>
+                            <i class="fas fa-chevron-down faq-arrow"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer a hassle-free 30-day return policy. Items must be unworn with tags attached. Refunds are processed within 5-7 business days after we receive your return.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item reveal">
+                        <button class="faq-question">
+                            <span><i class="fas fa-ruler faq-icon"></i> How do I find my perfect size?</span>
+                            <i class="fas fa-chevron-down faq-arrow"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Every product page has a detailed size chart! If you're between sizes, we recommend sizing up. Still unsure? Chat with our stylists — they're happy to help you find your perfect fit.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item reveal">
+                        <button class="faq-question">
+                            <span><i class="fas fa-credit-card faq-icon"></i> What payment methods do you accept?</span>
+                            <i class="fas fa-chevron-down faq-arrow"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We accept all major credit/debit cards (Visa, Mastercard, Amex), PayPal, Apple Pay, Google Pay, and Cash on Delivery in select regions.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item reveal">
+                        <button class="faq-question">
+                            <span><i class="fas fa-box-open faq-icon"></i> Can I track my order?</span>
+                            <i class="fas fa-chevron-down faq-arrow"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! Once your order ships, you'll receive a confirmation email with a live tracking link. You can also check your order status anytime by contacting our support team.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="faq-item reveal">
+                        <button class="faq-question">
+                            <span><i class="fas fa-tags faq-icon"></i> Do you offer discounts or promo codes?</span>
+                            <i class="fas fa-chevron-down faq-arrow"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! Subscribe to our newsletter for an instant 10% off your first order. We also run seasonal sales, and cart page par hamesha coupons available hote hain (try CLOSET10 😉).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== NEWSLETTER CTA ========== -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-box reveal">
+                    <div class="cta-glow cta-glow-1"></div>
+                    <div class="cta-glow cta-glow-2"></div>
+                    <h2>Still Have Questions?</h2>
+                    <p>Our friendly support team is online right now — don't be shy, say hello! 👋</p>
+                    <div class="cta-buttons">
+                        <a href="#contactForm" class="btn btn-light"><i class="fas fa-comment-dots"></i> Ask a Question</a>
+                        <a href="shop.html" class="btn btn-outline-light"><i class="fas fa-store"></i> Browse Collection</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== SUCCESS MODAL ========== -->
+    <div class="msg-success-overlay" id="msgSuccessOverlay">
+        <div class="msg-success-box">
+            <div class="success-check">
+                <svg viewBox="0 0 100 100">
+                    <circle class="check-circle" cx="50" cy="50" r="46" fill="none"/>
+                    <path class="check-mark" d="M28 52 L44 68 L74 36" fill="none"/>
+                </svg>
+            </div>
+            <h2>Message Sent! 🎉</h2>
+            <p>Thanks, <strong id="senderName">friend</strong>! We've received your message and will reply to <span id="senderEmail">your email</span> within 24 hours.</p>
+            <button class="btn btn-primary" id="successCloseBtn">
+                <i class="fas fa-check"></i> Got It!
+            </button>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="logo"><i class="fas fa-gem logo-icon"></i> THE CLOSET</a>
+                <p>Premium fashion, curated for those who dare to stand out. Elegance in every thread.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for exclusive drops & offers.</p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Your email">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 The Closet. All Rights Reserved. Crafted with <i class="fas fa-heart"></i></p>
+        </div>
+    </footer>
+
+    <!-- ========== SCROLL TO TOP ========== -->
+    <button id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ========== TOASTS ========== -->
+    <div id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="../JS/script.js"></script>
+    <script src="../JS/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+/* ============================================================
+   THE CLOSET — product.css (Product Detail Page)
+   ============================================================ */
+
+/* ---------- 1. Section + Layout ---------- */
+.pd-section { padding: 70px 0 90px; }
+
+.pd-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 55px;
+    align-items: start;
+}
+
+/* ---------- 2. Gallery ---------- */
+.pd-gallery { position: sticky; top: 100px; }
+
+.gallery-main {
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1.05;
+    box-shadow: 0 15px 45px rgba(15, 23, 42, 0.12);
+    cursor: zoom-in;
+    background: #f8fafc;
+}
+
+.gallery-main img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+/* Hover zoom (product.js transform-origin set karta hai) */
+.gallery-main.zoomed img { transform: scale(1.9); }
+
+.gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.thumb {
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: border-color 0.3s, transform 0.3s;
+    opacity: 0.7;
+}
+
+.thumb:hover { opacity: 1; transform: translateY(-3px); }
+
+.thumb.active {
+    border-color: #8B5CF6;
+    opacity: 1;
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
+}
+
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- 3. Product Info ---------- */
+.pd-category {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    background: linear-gradient(90deg, #8B5CF6, #06B6D4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.pd-name {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.pd-rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.rating-count { font-size: 0.83rem; color: #94a3b8; }
+
+/* Price Row */
+.pd-price-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, rgba(139,92,246,0.07), rgba(6,182,212,0.07));
+    border-radius: 16px;
+    border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.pd-price {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pd-old-price {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+.pd-discount {
+    display: none;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 5px 13px;
+    border-radius: 50px;
+    margin-left: auto;
+    animation: discountPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.pd-discount.show { display: inline-block; }
+
+@keyframes discountPop {
+    from { transform: scale(0); }
+    to   { transform: scale(1); }
+}
+
+.pd-desc {
+    color: #64748b;
+    font-size: 0.93rem;
+    line-height: 1.9;
+    margin-bottom: 26px;
+}
+
+/* ---------- 4. Sizes ---------- */
+.pd-sizes-block { margin-bottom: 26px; }
+
+.pd-sizes-block h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.pd-sizes { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ---------- 5. Actions Row ---------- */
+.pd-actions-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.pd-actions-row .btn { flex: 1; justify-content: center; min-width: 140px; }
+
+.qty-selector {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    overflow: hidden;
+    height: 50px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.qty-selector:focus-within {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+}
+
+.qty-selector button {
+    width: 42px; height: 100%;
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    color: #475569;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+}
+
+.qty-selector button:hover {
+    background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+    color: #fff;
+}
+
+.qty-selector span {
+    min-width: 40px;
+    text-align: center;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* ---------- 6. Wishlist Button ---------- */
+.pd-wish-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 50px;
+    border: 2px solid #fecdd3;
+    background: #fff;
+    color: #f43f5e;
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s;
+    margin-bottom: 26px;
+}
+
+.pd-wish-btn:hover {
+    background: linear-gradient(135deg, #ec4899, #f43f5e);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(236, 72, 153, 0.35);
+}
+
+.pd-wish-btn.active {
+    background: linear-gradient(135deg, #ec4899, #8B5CF6);
+    color: #fff;
+    border-color: transparent;
+}
+
+.pd-wish-btn.active i { animation: wishBeat 0.6s ease; }
+
+@keyframes wishBeat {
+    0%, 100% { transform: scale(1); }
+    40%      { transform: scale(1.4); }
+}
+
+/* ---------- 7. Meta Info ---------- */
+.pd-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.pd-meta-item {
+    background: #f8fafc;
+    border: 1px dashed #e2e8f0;
+    border-radius: 12px;
+    padding: 12px 14px;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.pd-meta-item:hover { border-color: #8B5CF6; background: #fff; }
+
+.pd-meta-item span {
+    display: block;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.pd-meta-item strong {
+    font-size: 0.82rem;
+    color: #0f172a;
+    text-transform: capitalize;
+    word-break: break-all;
+}
+
+/* ---------- 8. Tabs ---------- */
+.pd-tabs {
+    display: flex;
+    gap: 8px;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+
+.pd-tab {
+    background: none;
+    border: none;
+    padding: 13px 22px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.pd-tab::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, #8B5CF6, #06B6D4);
+    border-radius: 3px;
+    transform: scaleX(0);
+    transition: transform 0.35s ease;
+}
+
+.pd-tab:hover { color: #8B5CF6; }
+
+.pd-tab.active { color: #8B5CF6; }
+.pd-tab.active::after { transform: scaleX(1); }
+
+.tab-panel {
+    display: none;
+    animation: panelIn 0.45s ease both;
+}
+
+.tab-panel.active { display: block; }
+
+@keyframes panelIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.tab-panel p {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.9;
+}
+
+/* ---------- 9. Related Products ---------- */
+.related-section {
+    margin-top: 90px;
+    padding-top: 60px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.related-section .section-header { margin-bottom: 35px; }
+
+/* ---------- 10. RESPONSIVE ---------- */
+@media (max-width: 992px) {
+    .pd-layout { grid-template-columns: 1fr; gap: 35px; }
+    .pd-gallery { position: static; max-width: 550px; margin: 0 auto; }
+}
+
+@media (max-width: 576px) {
+    .pd-section { padding: 45px 0 60px; }
+    .pd-actions-row .btn { min-width: 100%; }
+    .pd-meta { grid-template-columns: 1fr 1fr; }
+    .gallery-thumbs { gap: 10px; }
+    .pd-tabs { gap: 2px; }
+    .pd-tab { padding: 11px 14px; font-size: 0.82rem; }
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | The Closet</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Common + About CSS (path apne folder ke hisaab se adjust karna) -->
+    <link rel="stylesheet" href="../CSS/pages.css">
+    <link rel="stylesheet" href="../CSS/about.css">
+</head>
+<body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div id="preloader">
+        <div class="loader">
+            <span class="loader-text">THE CLOSET</span>
+        </div>
+    </div>
+
+    <!-- ========== NAVBAR ========== -->
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gem logo-icon"></i> THE CLOSET
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Collection</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="shop.html" class="icon-btn"><i class="fas fa-search"></i></a>
+                    <a href="wishlist.html" class="icon-btn"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html" class="icon-btn cart-btn">
+                        <i class="fas fa-shopping-bag"></i> <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== PAGE BANNER ========== -->
+        <section class="page-banner">
+            <div class="container">
+                <h1 class="banner-title"><i class="fas fa-gem"></i> About Us</h1>
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><i class="fas fa-angle-right"></i></li>
+                    <li class="current">About</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========== STORY SECTION ========== -->
+        <section class="story-section section">
+            <div class="container story-grid">
+                <!-- Left: Images -->
+                <div class="story-images reveal">
+                    <div class="story-img-main">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="The Closet Store">
+                    </div>
+                    <div class="story-img-small">
+                        <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=500&q=80" alt="Store Interior">
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="exp-badge">
+                        <strong>10+</strong>
+                        <span>Years of<br>Excellence</span>
+                    </div>
+                </div>
+
+                <!-- Right: Text -->
+                <div class="story-text">
+                    <span class="section-subtitle reveal">Our Story</span>
+                    <h2 class="section-title reveal">The Journey of <span class="gradient-text">The Closet</span></h2>
+                    <p class="reveal">Founded in 2014, <strong>The Closet</strong> began as a small boutique with one simple dream — to make premium fashion accessible to everyone. What started as a tiny corner shop is now a beloved destination for style lovers worldwide.</p>
+                    <p class="reveal">We believe fashion is not just about clothes; it's about confidence, expression, and the story you tell without saying a word. Every piece in our collection is handpicked by our passionate team of stylists.</p>
+
+                    <ul class="story-points reveal">
+                        <li><i class="fas fa-circle-check"></i> 100% Authentic Premium Products</li>
+                        <li><i class="fas fa-circle-check"></i> Handpicked by Expert Stylists</li>
+                        <li><i class="fas fa-circle-check"></i> Sustainable & Ethical Sourcing</li>
+                        <li><i class="fas fa-circle-check"></i> 50,000+ Happy Customers</li>
+                    </ul>
+
+                    <a href="shop.html" class="btn btn-primary reveal">Explore Collection <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== STATS COUNTERS ========== -->
+        <section class="stats-section">
+            <div class="container stats-grid" id="statsSection">
+                <div class="stat-card reveal">
+                    <i class="fas fa-tshirt"></i>
+                    <strong class="counter" data-target="500" data-suffix="+">0</strong>
+                    <span>Premium Products</span>
+                </div>
+                <div class="stat-card reveal">
+                    <i class="fas fa-users"></i>
+                    <strong class="counter" data-target="50" data-suffix="K+">0</strong>
+                    <span>Happy Customers</span>
+                </div>
+                <div class="stat-card reveal">
+                    <i class="fas fa-award"></i>
+                    <strong class="counter" data-target="25" data-suffix="+">0</strong>
+                    <span>Fashion Awards</span>
+                </div>
+                <div class="stat-card reveal">
+                    <i class="fas fa-globe"></i>
+                    <strong class="counter" data-target="30" data-suffix="+">0</strong>
+                    <span>Countries Served</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== VALUES SECTION ========== -->
+        <section class="values-section section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">What Drives Us</span>
+                    <h2 class="section-title">Our Values</h2>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card reveal">
+                        <div class="value-icon"><i class="fas fa-gem"></i></div>
+                        <h3>Quality First</h3>
+                        <p>Every product passes a strict quality check. If it doesn't meet our standards, it never reaches your closet.</p>
+                    </div>
+                    <div class="value-card reveal">
+                        <div class="value-icon"><i class="fas fa-leaf"></i></div>
+                        <h3>Sustainability</h3>
+                        <p>From eco-friendly packaging to ethical sourcing — we care for the planet as much as we care for style.</p>
+                    </div>
+                    <div class="value-card reveal">
+                        <div class="value-icon"><i class="fas fa-heart"></i></div>
+                        <h3>Customer Love</h3>
+                        <p>Our customers are family. 24/7 support, easy returns, and a shopping experience that puts you first.</p>
+                    </div>
+                    <div class="value-card reveal">
+                        <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Innovation</h3>
+                        <p>We chase the latest trends and technologies to bring you fresh designs before anyone else.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== TIMELINE SECTION ========== -->
+        <section class="timeline-section section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Milestones</span>
+                    <h2 class="section-title">Our Journey</h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item left reveal">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2014</span>
+                            <h4>The Beginning</h4>
+                            <p>The Closet opens its first boutique in New York with just 20 products and endless passion.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right reveal">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2016</span>
+                            <h4>Going Online</h4>
+                            <p>Launched our e-commerce store and shipped to the first 1,000 customers across the US.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left reveal">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2018</span>
+                            <h4>Global Expansion</h4>
+                            <p>Started international shipping — serving fashion lovers in 30+ countries worldwide.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right reveal">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2021</span>
+                            <h4>Sustainability Pledge</h4>
+                            <p>Switched to 100% eco-friendly packaging and ethical sourcing across all collections.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left reveal">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2024</span>
+                            <h4>50K Family Strong</h4>
+                            <p>Crossed 50,000 happy customers! Thank you for being part of our story. 💜</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== TEAM SECTION ========== -->
+        <section class="team-section section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Meet The Crew</span>
+                    <h2 class="section-title">Our Team</h2>
+                </div>
+
+                <div class="team-grid">
+                    <div class="team-card reveal">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80" alt="Ahmed Raza">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h4>Ahmed Raza</h4>
+                            <span>Founder & CEO</span>
+                        </div>
+                    </div>
+
+                    <div class="team-card reveal">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80" alt="Sara Malik">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h4>Sara Malik</h4>
+                            <span>Creative Director</span>
+                        </div>
+                    </div>
+
+                    <div class="team-card reveal">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&q=80" alt="Bilal Ahmed">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h4>Bilal Ahmed</h4>
+                            <span>Head of Design</span>
+                        </div>
+                    </div>
+
+                    <div class="team-card reveal">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80" alt="Ayesha Khan">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h4>Ayesha Khan</h4>
+                            <span>Marketing Lead</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CTA SECTION ========== -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-box reveal">
+                    <div class="cta-glow cta-glow-1"></div>
+                    <div class="cta-glow cta-glow-2"></div>
+                    <h2>Ready to Upgrade Your Wardrobe?</h2>
+                    <p>Join 50,000+ style lovers and discover your next favourite outfit today.</p>
+                    <div class="cta-buttons">
+                        <a href="shop.html" class="btn btn-light"><i class="fas fa-store"></i> Shop Now</a>
+                        <a href="contact.html" class="btn btn-outline-light"><i class="fas fa-envelope"></i> Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="logo"><i class="fas fa-gem logo-icon"></i> THE CLOSET</a>
+                <p>Premium fashion, curated for those who dare to stand out. Elegance in every thread.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for exclusive drops & offers.</p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Your email">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 The Closet. All Rights Reserved. Crafted with <i class="fas fa-heart"></i></p>
+        </div>
+    </footer>
+
+    <!-- ========== SCROLL TO TOP ========== -->
+    <button id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ========== TOASTS ========== -->
+    <div id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="../JS/script.js"></script>
+    <script src="../JS/about.js"></script>
+</body>
+</html>
